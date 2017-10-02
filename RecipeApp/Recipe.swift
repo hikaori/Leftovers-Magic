@@ -11,7 +11,7 @@ import Alamofire
 import AlamofireImage
 import SwiftyJSON
 
-struct Data {
+struct Recipe {
     var imageURL = String()
     var title = String()
     var recipeURL = String()
@@ -26,8 +26,11 @@ struct Data {
 }
 
 struct SetData {
-    static func getData() -> [Data] {
-        var dataList = [Data]()
+    
+    //{ (parameters) -> return type in statements}
+    
+    static func getData(completion: @escaping ([Recipe])->()) {
+        var dataList: [Recipe] = []
         let id : String = "6c0aca51"
         let key: String = "4e8f81930e7546f41329dba38ffda943"
         let searchWord:String = "chicken"
@@ -41,21 +44,21 @@ struct SetData {
                 for item in json["hits"].arrayValue {
                     var imageURL:String
                     var label:String
-                    var RecipeURL:String
+                    var recipeURL:String
                     var ingredientLines: [Any]
-                    print(item["recipe"]["image"].stringValue)
+//                    print(item["recipe"]["image"].stringValue)
                     imageURL = item["recipe"]["image"].stringValue
                     label    = item["recipe"]["label"].stringValue
-                    RecipeURL = item["recipe"]["url"].stringValue
+                    recipeURL = item["recipe"]["url"].stringValue
                     ingredientLines = item["recipe"]["ingredientLines"].arrayValue
-//                    print(Data(WithImageURL: imageURL, title: label, recipeURL: RecipeURL,ingredientLines: ingredientLines))
-                    dataList.append(Data(WithImageURL: imageURL, title: label, recipeURL: RecipeURL,ingredientLines: ingredientLines))
+                    
+                    let recipeObj = Recipe(WithImageURL: imageURL, title: label, recipeURL: recipeURL, ingredientLines: ingredientLines)
+                    dataList.append(recipeObj)
                 }
+                
+                completion(dataList)
             }
-            print("datalistBefore:\(dataList.count)")
         }
-        print("datalistAfter:\(dataList.count)")
-        return dataList
     }
 }
 

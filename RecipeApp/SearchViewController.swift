@@ -8,28 +8,23 @@
 
 import UIKit
 
-class SearchViewController: UIViewController {
+class SearchViewController: UIViewController, UITextViewDelegate {
     @IBOutlet weak var searchField: UITextField!
-    
-    @IBOutlet weak var searchButton: UIButton!
-    
+    var recipies: [Recipe] = []
     override func viewDidLoad() {
         super.viewDidLoad()
-        let dataList = SetData.getData()
+        let dataList = SetData.getData { (recData) in
+            
+            self.recipies = recData
+            print(self.recipies.count)
+            print(self.recipies[0])
+        }
+//        print(recipies[0])
         
-        self.searchField.delegate = self as! UITextFieldDelegate
+        self.searchField.delegate = self
 
-        searchButton.addTarget(self, action: #selector(showList), for: .touchUpInside)
     }
     
-    func showList(){
-        let listCVC = ListCollectionViewController.init(photoName: "photolist")
-        listCVC.view.backgroundColor = UIColor.red
-        self.navigationController?.pushViewController(listCVC, animated: true)
-    }
-    
-    
-
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
