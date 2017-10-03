@@ -10,20 +10,17 @@ import UIKit
 
 class SearchViewController: UIViewController, UITextViewDelegate {
     @IBOutlet weak var searchField: UITextField!
-    var recipies: [Recipe] = []
+    @IBOutlet weak var searchButton: UIButton!
     override func viewDidLoad() {
         super.viewDidLoad()
-        let dataList = SetData.getData { (recData) in
-            
-            self.recipies = recData
-            print(self.recipies.count)
-            print(self.recipies[0])
-        }
-//        print(recipies[0])
-        
         self.searchField.delegate = self
-
+        
     }
+//    func buttonClick(sender: UIButton){
+//        //getting input from Text Field
+//        searchWord = searchField.text!
+//        
+//    }
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()

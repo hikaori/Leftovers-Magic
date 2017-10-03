@@ -7,27 +7,49 @@
 //
 
 import UIKit
+import Alamofire
+import AlamofireImage
 
 
 class ListCollectionViewController: UICollectionViewController {
-
+    var recipes: [Recipe] = []
+    
+    convenience init(recipies:[Recipe]) {
+        self.init(nibName: nil, bundle: nil)
+        self.recipes = recipies
+        print("ListCVCinit")
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
+        print("ListCVCLoad")
+        SetData.getData { (recData) in
+            self.recipes = recData
+
+            self.collectionView?.reloadData() // this method need to refresh data
+            print("number\(self.recipes.count)")
+        }
     }
     
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
-    
+    // how many picture
     override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 3
+        print("recipies.count\(recipes.count)")
+        return recipes.count
     }
     
+    // set each cell
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         var cell = collectionView.dequeueReusableCell(withReuseIdentifier: "cell", for: indexPath) as! ListCollectionViewCell
         
+        cell.listLabel.text = recipes[indexPath.row].title
+        let recipePicURL = recipes[indexPath.row].imageURL
+        Alamofire.request(recipePicURL).responseImage { response in
+            
+            if let image = response.result.value {
+                print("image downloaded: \(image)")
+                cell.listImage.image = image
+            }
+        }
         return cell
     }
 

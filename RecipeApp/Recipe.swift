@@ -24,19 +24,21 @@ struct Recipe {
         self.ingredientLines = ingredientLines
     }
 }
+struct RecipeSet {
+    var info = [Recipe]()
+}
 
 struct SetData {
-    
-    //{ (parameters) -> return type in statements}
-    
-    static func getData(completion: @escaping ([Recipe])->()) {
+//    static func getData(searchword: String,completion: @escaping ([Recipe])->()){
+    static func getData(completion: @escaping ([Recipe])->()){
         var dataList: [Recipe] = []
         let id : String = "6c0aca51"
         let key: String = "4e8f81930e7546f41329dba38ffda943"
+//        let searchWord:String = searchword
         let searchWord:String = "chicken"
         
         Alamofire.request("https://api.edamam.com/search?q=\(searchWord)&app_id=\(id)&app_key=\(key)").responseJSON { response in
-            
+//            print(response.description)
             if let value = response.result.value {
                 let json = JSON(value)
                 
@@ -46,16 +48,16 @@ struct SetData {
                     var label:String
                     var recipeURL:String
                     var ingredientLines: [Any]
-//                    print(item["recipe"]["image"].stringValue)
+
                     imageURL = item["recipe"]["image"].stringValue
                     label    = item["recipe"]["label"].stringValue
                     recipeURL = item["recipe"]["url"].stringValue
                     ingredientLines = item["recipe"]["ingredientLines"].arrayValue
                     
+                    
                     let recipeObj = Recipe(WithImageURL: imageURL, title: label, recipeURL: recipeURL, ingredientLines: ingredientLines)
                     dataList.append(recipeObj)
                 }
-                
                 completion(dataList)
             }
         }
