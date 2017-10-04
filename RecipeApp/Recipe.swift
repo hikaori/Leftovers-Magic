@@ -29,13 +29,14 @@ struct RecipeSet {
 }
 
 struct SetData {
-//    static func getData(searchword: String,completion: @escaping ([Recipe])->()){
-    static func getData(completion: @escaping ([Recipe])->()){
+    static func getData(searchword: String,completion: @escaping ([Recipe])->()){
+//    static func getData(completion: @escaping ([Recipe])->()){
         var dataList: [Recipe] = []
         let id : String = "6c0aca51"
         let key: String = "4e8f81930e7546f41329dba38ffda943"
-//        let searchWord:String = searchword
-        let searchWord:String = "chicken"
+        let searchWord:String = searchword
+//        let searchWord:String = "chicken"
+        print("searchWord\(searchWord)")
         
         Alamofire.request("https://api.edamam.com/search?q=\(searchWord)&app_id=\(id)&app_key=\(key)").responseJSON { response in
 //            print(response.description)

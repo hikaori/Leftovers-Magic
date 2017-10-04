@@ -39,7 +39,7 @@
                                 <rect key="frame" x="164.5" y="390" width="46" height="30"/>
                                 <state key="normal" title="Button"/>
                                 <connections>
-                                    <segue destination="nwL-0f-3dh" kind="show" identifier="searchButtonSegue" id="n9w-9T-36Z"/>
+                                    <segue destination="nwL-0f-3dh" kind="show" id="G4t-5V-VJQ"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -122,10 +122,10 @@
             </objects>
             <point key="canvasLocation" x="1628" y="-608.54572713643188"/>
         </scene>
-        <!--View Controller-->
+        <!--Recipe Detail View Controller-->
         <scene sceneID="sJv-fE-li7">
             <objects>
-                <viewController id="kxF-rT-Rf7" sceneMemberID="viewController">
+                <viewController id="kxF-rT-Rf7" customClass="RecipeDetailViewController" customModule="RecipeApp" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="Gq2-2v-qdJ"/>
                         <viewControllerLayoutGuide type="bottom" id="olo-QZ-zlE"/>
@@ -134,33 +134,46 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tVL-fv-J4B">
-                                <rect key="frame" x="166.5" y="77" width="42" height="20.5"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="d3S-1T-bVq">
-                                <rect key="frame" x="0.0" y="75" width="375" height="271"/>
+                                <rect key="frame" x="0.0" y="131" width="375" height="271"/>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OmQ-u5-AEa">
                                 <rect key="frame" x="78" y="599" width="219" height="48"/>
                                 <state key="normal" title="Button"/>
                             </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tVL-fv-J4B">
+                                <rect key="frame" x="16" y="87" width="343" height="21"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="343" id="Hgi-4c-ji1"/>
+                                    <constraint firstAttribute="height" constant="21" id="O1h-SH-ciB"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="21"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="tVL-fv-J4B" firstAttribute="centerX" secondItem="djZ-u4-rbT" secondAttribute="centerX" id="1dq-KS-fBu"/>
                             <constraint firstItem="d3S-1T-bVq" firstAttribute="centerX" secondItem="djZ-u4-rbT" secondAttribute="centerX" id="Jkw-gt-E4U"/>
+                            <constraint firstAttribute="trailing" secondItem="d3S-1T-bVq" secondAttribute="trailing" id="bIM-Da-6LI"/>
                             <constraint firstItem="tVL-fv-J4B" firstAttribute="top" secondItem="Gq2-2v-qdJ" secondAttribute="bottom" constant="13" id="cvm-mR-bbi"/>
+                            <constraint firstItem="d3S-1T-bVq" firstAttribute="top" secondItem="tVL-fv-J4B" secondAttribute="bottom" constant="23.5" id="fZy-ci-M6b"/>
+                            <constraint firstItem="d3S-1T-bVq" firstAttribute="leading" secondItem="djZ-u4-rbT" secondAttribute="leading" id="hgI-S1-vkA"/>
                             <constraint firstItem="d3S-1T-bVq" firstAttribute="top" secondItem="tVL-fv-J4B" secondAttribute="bottom" constant="21" id="idr-0y-riz"/>
                             <constraint firstItem="OmQ-u5-AEa" firstAttribute="centerX" secondItem="djZ-u4-rbT" secondAttribute="centerX" id="k0N-BQ-eh4"/>
+                            <constraint firstItem="tVL-fv-J4B" firstAttribute="top" secondItem="Gq2-2v-qdJ" secondAttribute="bottom" constant="23" id="zeN-yy-z4Y"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="RecipeDetailPic" destination="d3S-1T-bVq" id="ZOd-C6-9mC"/>
+                        <outlet property="recipeDetailPic" destination="d3S-1T-bVq" id="0Ao-Io-FNm"/>
+                        <outlet property="recipeDetailTitle" destination="tVL-fv-J4B" id="N9d-tX-jyg"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="6qV-zU-ZsK" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1628" y="217"/>
+            <point key="canvasLocation" x="2752.8000000000002" y="-609.44527736131943"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="x2r-Ib-mIR">

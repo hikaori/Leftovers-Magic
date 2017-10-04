@@ -16,16 +16,17 @@ class SearchViewController: UIViewController, UITextViewDelegate {
         self.searchField.delegate = self
         
     }
-//    func buttonClick(sender: UIButton){
-//        //getting input from Text Field
-//        searchWord = searchField.text!
-//        
-//    }
-    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
+    
+    // send serch word (String data) to ListCollectionViewController
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        var DestViewController : ListCollectionViewController = segue.destination as! ListCollectionViewController
+        DestViewController.searchWord = searchField.text!
+    }
+    
 }
 
 // For close keyboard

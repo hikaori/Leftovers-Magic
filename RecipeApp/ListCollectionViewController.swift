@@ -13,17 +13,17 @@ import AlamofireImage
 
 class ListCollectionViewController: UICollectionViewController {
     var recipes: [Recipe] = []
+    var searchWord = String()
     
     convenience init(recipies:[Recipe]) {
         self.init(nibName: nil, bundle: nil)
         self.recipes = recipies
-        print("ListCVCinit")
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        print("ListCVCLoad")
-        SetData.getData { (recData) in
+//        print("text\(searchWord)")
+        SetData.getData(searchword: searchWord) { (recData) in
             self.recipes = recData
 
             self.collectionView?.reloadData() // this method need to refresh data
@@ -39,7 +39,7 @@ class ListCollectionViewController: UICollectionViewController {
     
     // set each cell
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        var cell = collectionView.dequeueReusableCell(withReuseIdentifier: "cell", for: indexPath) as! ListCollectionViewCell
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "cell", for: indexPath) as! ListCollectionViewCell
         
         cell.listLabel.text = recipes[indexPath.row].title
         let recipePicURL = recipes[indexPath.row].imageURL
@@ -52,5 +52,7 @@ class ListCollectionViewController: UICollectionViewController {
         }
         return cell
     }
+    
+    
 
 }
