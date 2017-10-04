@@ -14,7 +14,7 @@ import AlamofireImage
 class ListCollectionViewController: UICollectionViewController {
     var recipes: [Recipe] = []
     var searchWord = String()
-    var selectedRecipe = Recipe(WithImageURL: "", title: "", recipeURL: "", ingredientLines: [])
+//    var selectedRecipe = Recipe(WithImageURL: "", title: "", recipeURL: "", ingredientLines: [])
     
     convenience init(recipies:[Recipe]) {
         self.init(nibName: nil, bundle: nil)
@@ -54,18 +54,12 @@ class ListCollectionViewController: UICollectionViewController {
         return cell
     }
     
-    // get the index of selected item and set the selected item data into segue
-    override func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        let selectedindex = indexPath.row
-        self.selectedRecipe = recipes[selectedindex]
-        performSegue(withIdentifier: "selectedRecipeSegue", sender: selectedRecipe)
-    }
-    
     // pass the data to next view
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if segue.identifier == "selectedRecipeSegue"{
-            let DestViewController : RecipeDetailViewController = segue.destination as! RecipeDetailViewController
-                DestViewController.recipe = selectedRecipe
+        if segue.identifier == "selectedRecipeSegue" {
+            let destViewController = segue.destination as! RecipeDetailViewController
+            let recipe = recipes[(collectionView?.indexPathsForSelectedItems?.first?.row)!] // first value of recipes which is imageURL. row is the selected one
+            destViewController.recipe = recipe
         }
     }
 
