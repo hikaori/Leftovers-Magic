@@ -4,11 +4,12 @@
 //
 //  Created by kaori hirata on 2017-10-03.
 //  Copyright © 2017 kaori hirata. All rights reserved.
-// git branch real test 
+//
 
 import UIKit
 import Alamofire
 import AlamofireImage
+
 
 class RecipeDetailViewController: UIViewController , UITableViewDataSource, UITableViewDelegate {
 
@@ -34,11 +35,7 @@ class RecipeDetailViewController: UIViewController , UITableViewDataSource, UITa
             }
         }
     }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
+    
     // ingredient tableview
     func numberOfSections(in tableView: UITableView) -> Int {
         return recipe.ingredientLines.count
