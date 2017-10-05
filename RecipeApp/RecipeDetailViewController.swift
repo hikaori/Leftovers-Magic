@@ -12,17 +12,13 @@ import AlamofireImage
 
 
 class RecipeDetailViewController: UIViewController , UITableViewDataSource, UITableViewDelegate {
-<<<<<<< HEAD
-    
-=======
 
->>>>>>> modifyRecipeDetailVC
     @IBOutlet weak var ingredientTableView: UITableView!
     
     //UIViewController,
     @IBOutlet weak var recipeDetailTitle: UILabel!
     @IBOutlet weak var recipeDetailPic: UIImageView!
-    var recipe = Recipe(WithImageURL: "", title: "", recipeURL: "", ingredientLines: [])
+    var recipe = Recipe(WithImageURL: "", title: "", recipeURL: "", ingredientLines: [], webURL:"")
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -56,5 +52,15 @@ class RecipeDetailViewController: UIViewController , UITableViewDataSource, UITa
                 let setText = String(describing: text)
                 cell.textLabel?.text = setText
                 return cell
+    }
+    
+    // pass the data(webURL) to next view
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "toWebSiteSegue" {
+            let destViewController = segue.destination as! WebSiteViewController
+//            let url = "https://www.google.com"
+            let url = recipe.webURL
+            destViewController.webURL = url
+        }
     }
 }

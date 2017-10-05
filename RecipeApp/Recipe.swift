@@ -16,12 +16,14 @@ struct Recipe {
     var title = String()
     var recipeURL = String()
     var ingredientLines = [Any]()
+    var webURL = String()
     
-    init(WithImageURL imageURL:String, title: String, recipeURL:String,ingredientLines:[Any]) {
+    init(WithImageURL imageURL:String, title: String, recipeURL:String,ingredientLines:[Any],webURL:String) {
         self.imageURL = imageURL
         self.title = title
         self.recipeURL = recipeURL
         self.ingredientLines = ingredientLines
+        self.webURL = webURL
     }
 }
 struct RecipeSet {
@@ -49,14 +51,16 @@ struct SetData {
                     var label:String
                     var recipeURL:String
                     var ingredientLines: [Any]
+                    var webURL:String
 
                     imageURL = item["recipe"]["image"].stringValue
                     label    = item["recipe"]["label"].stringValue
                     recipeURL = item["recipe"]["url"].stringValue
                     ingredientLines = item["recipe"]["ingredientLines"].arrayValue
+                    webURL   = item["recipe"]["url"].stringValue
                     
                     
-                    let recipeObj = Recipe(WithImageURL: imageURL, title: label, recipeURL: recipeURL, ingredientLines: ingredientLines)
+                    let recipeObj = Recipe(WithImageURL: imageURL, title: label, recipeURL: recipeURL, ingredientLines: ingredientLines,webURL:webURL)
                     dataList.append(recipeObj)
                 }
                 completion(dataList)

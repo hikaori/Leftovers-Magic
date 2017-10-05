@@ -144,6 +144,9 @@
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OmQ-u5-AEa">
                                 <rect key="frame" x="78" y="617" width="219" height="30"/>
                                 <state key="normal" title="Button"/>
+                                <connections>
+                                    <segue destination="Ipz-fm-t7s" kind="show" identifier="toWebSiteSegue" id="hwl-Yv-nin"/>
+                                </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tVL-fv-J4B">
                                 <rect key="frame" x="26" y="72" width="323" height="21"/>
@@ -207,6 +210,24 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="6qV-zU-ZsK" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2752.5" y="-609.5"/>
+        </scene>
+        <!--Web Site View Controller-->
+        <scene sceneID="U6e-AP-P5L">
+            <objects>
+                <viewController id="Ipz-fm-t7s" customClass="WebSiteViewController" customModule="RecipeApp" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="QYX-Iz-82R"/>
+                        <viewControllerLayoutGuide type="bottom" id="yQt-d8-El4"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="t6k-wA-KPs">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="TH4-w8-dRW" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3457" y="-610"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="x2r-Ib-mIR">

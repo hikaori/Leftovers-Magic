@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		5A5B96438680386EC3DF67E3 /* Pods_RecipeApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 54B96F18F06CD85EBC85E2D3 /* Pods_RecipeApp.framework */; };
+		DC10A9041F85B42100326093 /* WebSiteViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC10A9031F85B42100326093 /* WebSiteViewController.swift */; };
 		DC2F73A41F7C8307005E928C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC2F73A31F7C8307005E928C /* AppDelegate.swift */; };
 		DC2F73A91F7C8307005E928C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DC2F73A71F7C8307005E928C /* Main.storyboard */; };
 		DC2F73AB1F7C8307005E928C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DC2F73AA1F7C8307005E928C /* Assets.xcassets */; };
@@ -23,6 +24,7 @@
 		1C0A6D3E7B65BD1B51CCEABE /* Pods-RecipeApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RecipeApp.debug.xcconfig"; path = "Pods/Target Support Files/Pods-RecipeApp/Pods-RecipeApp.debug.xcconfig"; sourceTree = "<group>"; };
 		485820E131CD778CDB540C84 /* Pods-RecipeApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RecipeApp.release.xcconfig"; path = "Pods/Target Support Files/Pods-RecipeApp/Pods-RecipeApp.release.xcconfig"; sourceTree = "<group>"; };
 		54B96F18F06CD85EBC85E2D3 /* Pods_RecipeApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_RecipeApp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		DC10A9031F85B42100326093 /* WebSiteViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebSiteViewController.swift; sourceTree = "<group>"; };
 		DC2F73A01F7C8307005E928C /* RecipeApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RecipeApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DC2F73A31F7C8307005E928C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		DC2F73A81F7C8307005E928C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -96,6 +98,7 @@
 				DC2F73AC1F7C8307005E928C /* LaunchScreen.storyboard */,
 				DC2F73AF1F7C8307005E928C /* Info.plist */,
 				DC94AFCE1F8488D400003F24 /* RecipeDetailViewController.swift */,
+				DC10A9031F85B42100326093 /* WebSiteViewController.swift */,
 			);
 			path = RecipeApp;
 			sourceTree = "<group>";
@@ -239,6 +242,7 @@
 				DC2F73A41F7C8307005E928C /* AppDelegate.swift in Sources */,
 				DCA764131F82030400996100 /* SearchViewController.swift in Sources */,
 				DC94AFCF1F8488D400003F24 /* RecipeDetailViewController.swift in Sources */,
+				DC10A9041F85B42100326093 /* WebSiteViewController.swift in Sources */,
 				DC2F73D81F7E2CAD005E928C /* Recipe.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
