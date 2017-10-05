@@ -13,7 +13,6 @@ import AlamofireImage
 
 class RecipeDetailViewController: UIViewController , UITableViewDataSource, UITableViewDelegate {
 
-    
     @IBOutlet weak var ingredientTableView: UITableView!
     
     //UIViewController,
@@ -34,11 +33,14 @@ class RecipeDetailViewController: UIViewController , UITableViewDataSource, UITa
                 self.recipeDetailPic.image = image
             }
         }
+        
+        ingredientTableView.delegate = self
+        ingredientTableView.dataSource = self
     }
     
     // ingredient tableview
     func numberOfSections(in tableView: UITableView) -> Int {
-        return recipe.ingredientLines.count
+        return 1
     }
     func tableView(_ tableView:UITableView, numberOfRowsInSection section:Int) -> Int{
         return recipe.ingredientLines.count
@@ -47,28 +49,8 @@ class RecipeDetailViewController: UIViewController , UITableViewDataSource, UITa
         let cell = tableView.dequeueReusableCell(withIdentifier: "ingredient")!
                 let text = recipe.ingredientLines[indexPath.row]
                 print("text\(text)")
-//                ingredientLabel.text = String(describing: text)
-//                cell.textLabel?.text = ingredientLabel.text
+                let setText = String(describing: text)
+                cell.textLabel?.text = setText
                 return cell
     }
-    
-//    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-//        return recipe.ingredientLines.count
-//    }
-//
-//    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-//        let cell = tableView.dequeueReusableCell(withIdentifier: "ingredient")!
-//        let text = recipe.ingredientLines[indexPath.row]
-//        print("text\(text)")
-//        cell.textLabel?.text = String(describing: text)
-//        return cell
-//    }
-//
-//    func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-//        // your cell coding
-//        return UITableViewCell()
-//    }
-//    func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
-//        // cell selected code here
-//    }
 }

@@ -166,22 +166,6 @@
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="fWD-1d-5Vj" id="N11-1P-OzJ">
                                             <rect key="frame" x="0.0" y="0.0" width="323" height="43.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
-                                            <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Vhk-f9-LBZ">
-                                                    <rect key="frame" x="8" y="0.0" width="315" height="36"/>
-                                                    <constraints>
-                                                        <constraint firstAttribute="height" constant="36" id="CsP-Co-igl"/>
-                                                        <constraint firstAttribute="width" constant="315" id="Rca-Rx-4NK"/>
-                                                    </constraints>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                    <nil key="textColor"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
-                                            </subviews>
-                                            <constraints>
-                                                <constraint firstItem="Vhk-f9-LBZ" firstAttribute="top" secondItem="N11-1P-OzJ" secondAttribute="top" id="Tne-Fi-ItU"/>
-                                                <constraint firstAttribute="trailing" secondItem="Vhk-f9-LBZ" secondAttribute="trailing" id="wXG-hH-YOi"/>
-                                            </constraints>
                                         </tableViewCellContentView>
                                     </tableViewCell>
                                 </prototypes>
@@ -215,7 +199,6 @@
                         </constraints>
                     </view>
                     <connections>
-                        <outlet property="RecipeDetailPic" destination="d3S-1T-bVq" id="ZOd-C6-9mC"/>
                         <outlet property="ingredientTableView" destination="1YI-7y-Dht" id="7pC-yP-9qp"/>
                         <outlet property="recipeDetailPic" destination="d3S-1T-bVq" id="0Ao-Io-FNm"/>
                         <outlet property="recipeDetailTitle" destination="tVL-fv-J4B" id="N9d-tX-jyg"/>
