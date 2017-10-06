@@ -19,7 +19,7 @@ class RecipeDetailViewController: UIViewController , UITableViewDataSource, UITa
     //UIViewController,
     @IBOutlet weak var recipeDetailTitle: UILabel!
     @IBOutlet weak var recipeDetailPic: UIImageView!
-    var recipe = Recipe(WithImageURL: "", title: "", recipeURL: "", ingredientLines: [], webURL:"")
+    var recipe = Recipe(WithImageURL: "", title: "", recipeURL: "", ingredientLines: [], webURL:"" ,calories:0)
     
     override func viewDidLoad() {
         super.viewDidLoad()

@@ -17,13 +17,15 @@ struct Recipe {
     var recipeURL = String()
     var ingredientLines = [Any]()
     var webURL = String()
+    var calories = Double()
     
-    init(WithImageURL imageURL:String, title: String, recipeURL:String,ingredientLines:[Any],webURL:String) {
+    init(WithImageURL imageURL:String, title: String, recipeURL:String,ingredientLines:[Any],webURL:String, calories:Double) {
         self.imageURL = imageURL
         self.title = title
         self.recipeURL = recipeURL
         self.ingredientLines = ingredientLines
         self.webURL = webURL
+        self.calories = calories
     }
 }
 struct RecipeSet {
@@ -32,16 +34,16 @@ struct RecipeSet {
 
 struct SetData {
     static func getData(searchword: String,completion: @escaping ([Recipe])->()){
-//    static func getData(completion: @escaping ([Recipe])->()){
+        //    static func getData(completion: @escaping ([Recipe])->()){
         var dataList: [Recipe] = []
         let id : String = "6c0aca51"
         let key: String = "4e8f81930e7546f41329dba38ffda943"
         let searchWord:String = searchword
-//        let searchWord:String = "chicken"
+        //        let searchWord:String = "chicken"
         print("searchWord\(searchWord)")
         
         Alamofire.request("https://api.edamam.com/search?q=\(searchWord)&app_id=\(id)&app_key=\(key)").responseJSON { response in
-//            print(response.description)
+            //            print(response.description)
             if let value = response.result.value {
                 let json = JSON(value)
                 
@@ -52,15 +54,17 @@ struct SetData {
                     var recipeURL:String
                     var ingredientLines: [Any]
                     var webURL:String
-
+                    var calories:Double
+                    
                     imageURL = item["recipe"]["image"].stringValue
                     label    = item["recipe"]["label"].stringValue
                     recipeURL = item["recipe"]["url"].stringValue
                     ingredientLines = item["recipe"]["ingredientLines"].arrayValue
                     webURL   = item["recipe"]["url"].stringValue
+                    calories = item["recipe"]["totalDaily"]["ENERC_KCAL"]["quantity"].doubleValue
                     
                     
-                    let recipeObj = Recipe(WithImageURL: imageURL, title: label, recipeURL: recipeURL, ingredientLines: ingredientLines,webURL:webURL)
+                    let recipeObj = Recipe(WithImageURL: imageURL, title: label, recipeURL: recipeURL, ingredientLines: ingredientLines,webURL:webURL,calories:calories)
                     dataList.append(recipeObj)
                 }
                 completion(dataList)
@@ -68,4 +72,3 @@ struct SetData {
         }
     }
 }
-
