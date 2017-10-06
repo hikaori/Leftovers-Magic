@@ -13,7 +13,6 @@ import AlamofireImage
 
 class RecipeDetailViewController: UIViewController , UITableViewDataSource, UITableViewDelegate {
     @IBOutlet weak var detailingNum: UILabel!
-    
     @IBOutlet weak var ingredientTableView: UITableView!
     
     //UIViewController,
@@ -23,9 +22,6 @@ class RecipeDetailViewController: UIViewController , UITableViewDataSource, UITa
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        //set RecipeTitel
-        recipeDetailTitle.text = self.recipe.title
-        
         // set Image
         Alamofire.request(self.recipe.imageURL).responseImage { response in
             
@@ -34,6 +30,12 @@ class RecipeDetailViewController: UIViewController , UITableViewDataSource, UITa
                 self.recipeDetailPic.image = image
             }
         }
+        
+        //set RecipeTitel
+        recipeDetailTitle.text = self.recipe.title
+        
+        //set Ingredient Number
+        detailingNum.text = String(self.recipe.ingredientLines.count)
         
         ingredientTableView.delegate = self
         ingredientTableView.dataSource = self
