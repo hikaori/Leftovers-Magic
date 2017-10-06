@@ -42,8 +42,9 @@ class ListCollectionViewController: UICollectionViewController {
     // set each cell
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "cell", for: indexPath) as! ListCollectionViewCell
-        
+        //set recipe Title
         cell.listLabel.text = recipes[indexPath.row].title
+        //set recipe Image
         let recipePicURL = recipes[indexPath.row].imageURL
         Alamofire.request(recipePicURL).responseImage { response in
             
@@ -52,6 +53,9 @@ class ListCollectionViewController: UICollectionViewController {
                 cell.listImage.image = image
             }
         }
+        //set recipe caloriy
+        let recipeCalories = recipes[indexPath.row].calories
+        cell.listCalNum.text = String(recipeCalories)
         return cell
     }
     
