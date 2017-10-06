@@ -11,5 +11,8 @@ import UIKit
 class ListCollectionViewCell: UICollectionViewCell {
     
     @IBOutlet weak var listLabel: UILabel!
+    @IBOutlet weak var recipeTitle: UILabel!
     @IBOutlet weak var listImage: UIImageView!
+    @IBOutlet weak var calorieNum: UILabel!
+    @IBOutlet weak var ingredientsNum: UILabel!
 }
