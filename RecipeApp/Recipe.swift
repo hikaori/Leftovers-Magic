@@ -42,7 +42,7 @@ struct SetData {
         //        let searchWord:String = "chicken"
         print("searchWord\(searchWord)")
         
-        Alamofire.request("https://api.edamam.com/search?q=\(searchWord)&app_id=\(id)&app_key=\(key)").responseJSON { response in
+        Alamofire.request("https://api.edamam.com/search?q=\(searchWord)&app_id=\(id)&app_key=\(key)&from=0&to=100&").responseJSON { response in
             //            print(response.description)
             if let value = response.result.value {
                 let json = JSON(value)
