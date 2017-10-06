@@ -24,7 +24,14 @@ class SearchViewController: UIViewController, UITextViewDelegate {
     // send serch word (String data) to ListCollectionViewController
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         let DestViewController : ListCollectionViewController = segue.destination as! ListCollectionViewController
-        DestViewController.searchWord = searchField.text!
+        let sendWord:String
+        if searchField.text!.contains(","){
+            sendWord = searchField.text!.replacingOccurrences(of: ",", with: "%2C")
+            DestViewController.searchWord = sendWord
+        }
+        else{
+            DestViewController.searchWord = searchField.text!
+        }
     }
     
 }
