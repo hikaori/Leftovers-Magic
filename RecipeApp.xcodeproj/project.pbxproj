@@ -94,11 +94,11 @@
 				DCA764121F82030400996100 /* SearchViewController.swift */,
 				DC66480D1F82FFCF000749FE /* ListCollectionViewController.swift */,
 				DC66480F1F8302DD000749FE /* ListCollectionViewCell.swift */,
+				DC94AFCE1F8488D400003F24 /* RecipeDetailViewController.swift */,
+				DC10A9031F85B42100326093 /* WebSiteViewController.swift */,
 				DC2F73AA1F7C8307005E928C /* Assets.xcassets */,
 				DC2F73AC1F7C8307005E928C /* LaunchScreen.storyboard */,
 				DC2F73AF1F7C8307005E928C /* Info.plist */,
-				DC94AFCE1F8488D400003F24 /* RecipeDetailViewController.swift */,
-				DC10A9031F85B42100326093 /* WebSiteViewController.swift */,
 			);
 			path = RecipeApp;
 			sourceTree = "<group>";
