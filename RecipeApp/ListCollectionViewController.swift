@@ -15,6 +15,7 @@ class ListCollectionViewController: UICollectionViewController {
     var recipes: [Recipe] = []
     var searchWord = String()
 //    var selectedRecipe = Recipe(WithImageURL: "", title: "", recipeURL: "", ingredientLines: [])
+
     
     convenience init(recipies:[Recipe]) {
         self.init(nibName: nil, bundle: nil)

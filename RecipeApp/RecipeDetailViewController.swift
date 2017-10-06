@@ -12,7 +12,8 @@ import AlamofireImage
 
 
 class RecipeDetailViewController: UIViewController , UITableViewDataSource, UITableViewDelegate {
-
+    @IBOutlet weak var detailingNum: UILabel!
+    
     @IBOutlet weak var ingredientTableView: UITableView!
     
     //UIViewController,
