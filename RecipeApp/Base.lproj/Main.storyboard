@@ -22,17 +22,14 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1Bq-rN-2vn">
-                                <rect key="frame" x="164" y="318" width="46" height="30"/>
-                                <state key="normal" title="Button"/>
-                                <connections>
-                                    <segue destination="nwL-0f-3dh" kind="show" id="G4t-5V-VJQ"/>
-                                </connections>
-                            </button>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="background-top" translatesAutoresizingMaskIntoConstraints="NO" id="ihJ-Wu-wlB">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                            </imageView>
                             <textField opaque="NO" contentMode="scaleToFill" restorationIdentifier="inputText" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="fx) tomato" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="DQm-fP-P05">
-                                <rect key="frame" x="24" y="223" width="326" height="30"/>
+                                <rect key="frame" x="24" y="404" width="326" height="40"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="30" id="OI7-VH-t9h"/>
+                                    <constraint firstAttribute="height" constant="40" id="OI7-VH-t9h"/>
                                 </constraints>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
@@ -42,43 +39,20 @@
                                     <action selector="searchField:" destination="jSE-Bn-gIn" eventType="editingDidEnd" id="ITt-eC-ccc"/>
                                 </connections>
                             </textField>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JuS-au-6LL">
-                                <rect key="frame" x="114" y="423" width="146" height="77"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Button">
-                                    <color key="titleColor" red="1" green="0.45159254156253015" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                    <color key="titleShadowColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                </state>
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1Bq-rN-2vn">
+                                <rect key="frame" x="87" y="495" width="200" height="50"/>
+                                <state key="normal" image="btn_find"/>
+                                <connections>
+                                    <segue destination="nwL-0f-3dh" kind="show" id="G4t-5V-VJQ"/>
+                                </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="a97-h3-JkC">
-                                <rect key="frame" x="114" y="556" width="165" height="61"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Button"/>
-                            </button>
-
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ulZ-7c-cXq">
-                                <rect key="frame" x="116" y="638" width="142" height="21"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="23"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8Dq-18-hmg">
-                                <rect key="frame" x="164" y="500" width="46" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Button">
-                                    <color key="titleColor" red="0.22475491235642323" green="0.74119575777202074" blue="0.2218106233965392" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                </state>
-                            </button>
-
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="DQm-fP-P05" firstAttribute="centerX" secondItem="y05-MU-1Mv" secondAttribute="centerX" id="6Mb-a7-oU1"/>
                             <constraint firstItem="DQm-fP-P05" firstAttribute="leading" secondItem="y05-MU-1Mv" secondAttribute="leadingMargin" constant="8" id="Dm8-fc-THk"/>
                             <constraint firstItem="1Bq-rN-2vn" firstAttribute="top" secondItem="DQm-fP-P05" secondAttribute="bottom" constant="65" id="VLF-Cx-Ik3"/>
-                            <constraint firstItem="DQm-fP-P05" firstAttribute="top" secondItem="iQc-31-Avg" secondAttribute="bottom" constant="159" id="ZGx-Ki-VtA"/>
+                            <constraint firstItem="DQm-fP-P05" firstAttribute="top" secondItem="iQc-31-Avg" secondAttribute="bottom" constant="340" id="ZGx-Ki-VtA"/>
                             <constraint firstItem="1Bq-rN-2vn" firstAttribute="centerX" secondItem="y05-MU-1Mv" secondAttribute="centerX" id="g0A-hk-TYc"/>
                             <constraint firstItem="DQm-fP-P05" firstAttribute="centerX" secondItem="y05-MU-1Mv" secondAttribute="centerX" id="xBs-QQ-WhU"/>
                         </constraints>
@@ -355,4 +329,8 @@
             <point key="canvasLocation" x="-1" y="-609"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="background-top" width="187" height="333"/>
+        <image name="btn_find" width="121" height="34"/>
+    </resources>
 </document>
