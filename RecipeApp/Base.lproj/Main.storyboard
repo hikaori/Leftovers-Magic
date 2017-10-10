@@ -22,12 +22,25 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="background-top" translatesAutoresizingMaskIntoConstraints="NO" id="ihJ-Wu-wlB">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="background-top-1" translatesAutoresizingMaskIntoConstraints="NO" id="ihJ-Wu-wlB">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                             </imageView>
-                            <textField opaque="NO" contentMode="scaleToFill" restorationIdentifier="inputText" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="fx) tomato" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="DQm-fP-P05">
-                                <rect key="frame" x="24" y="404" width="326" height="40"/>
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1Bq-rN-2vn">
+                                <rect key="frame" x="87" y="495" width="200" height="50"/>
+                                <state key="normal" image="btn_find"/>
+                                <connections>
+                                    <segue destination="nwL-0f-3dh" kind="show" id="G4t-5V-VJQ"/>
+                                </connections>
+                            </button>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="logo" translatesAutoresizingMaskIntoConstraints="NO" id="Qaa-fH-Aau">
+                                <rect key="frame" x="40" y="154" width="295" height="100"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="100" id="TtF-sy-or0"/>
+                                </constraints>
+                            </imageView>
+                            <textField opaque="NO" contentMode="scaleToFill" restorationIdentifier="inputText" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="e.g. tomato,egg" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="DQm-fP-P05">
+                                <rect key="frame" x="24" y="364" width="326" height="40"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="40" id="OI7-VH-t9h"/>
                                 </constraints>
@@ -39,21 +52,18 @@
                                     <action selector="searchField:" destination="jSE-Bn-gIn" eventType="editingDidEnd" id="ITt-eC-ccc"/>
                                 </connections>
                             </textField>
-                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1Bq-rN-2vn">
-                                <rect key="frame" x="87" y="495" width="200" height="50"/>
-                                <state key="normal" image="btn_find"/>
-                                <connections>
-                                    <segue destination="nwL-0f-3dh" kind="show" id="G4t-5V-VJQ"/>
-                                </connections>
-                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="DQm-fP-P05" firstAttribute="centerX" secondItem="y05-MU-1Mv" secondAttribute="centerX" id="6Mb-a7-oU1"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="Qaa-fH-Aau" secondAttribute="trailing" constant="24" id="DHa-w0-yNB"/>
                             <constraint firstItem="DQm-fP-P05" firstAttribute="leading" secondItem="y05-MU-1Mv" secondAttribute="leadingMargin" constant="8" id="Dm8-fc-THk"/>
+                            <constraint firstItem="Qaa-fH-Aau" firstAttribute="centerX" secondItem="y05-MU-1Mv" secondAttribute="centerX" id="HSq-dY-Pdu"/>
                             <constraint firstItem="1Bq-rN-2vn" firstAttribute="top" secondItem="DQm-fP-P05" secondAttribute="bottom" constant="65" id="VLF-Cx-Ik3"/>
-                            <constraint firstItem="DQm-fP-P05" firstAttribute="top" secondItem="iQc-31-Avg" secondAttribute="bottom" constant="340" id="ZGx-Ki-VtA"/>
+                            <constraint firstItem="DQm-fP-P05" firstAttribute="top" secondItem="iQc-31-Avg" secondAttribute="bottom" constant="300" id="ZGx-Ki-VtA"/>
                             <constraint firstItem="1Bq-rN-2vn" firstAttribute="centerX" secondItem="y05-MU-1Mv" secondAttribute="centerX" id="g0A-hk-TYc"/>
+                            <constraint firstItem="Qaa-fH-Aau" firstAttribute="top" secondItem="iQc-31-Avg" secondAttribute="bottom" constant="90" id="nOw-mp-3WN"/>
+                            <constraint firstItem="Qaa-fH-Aau" firstAttribute="leading" secondItem="y05-MU-1Mv" secondAttribute="leadingMargin" constant="24" id="x8e-hb-wpG"/>
                             <constraint firstItem="DQm-fP-P05" firstAttribute="centerX" secondItem="y05-MU-1Mv" secondAttribute="centerX" id="xBs-QQ-WhU"/>
                         </constraints>
                     </view>
@@ -310,7 +320,8 @@
         </scene>
     </scenes>
     <resources>
-        <image name="background-top" width="187" height="333"/>
+        <image name="background-top-1" width="375" height="667"/>
         <image name="btn_find" width="121" height="34"/>
+        <image name="logo" width="304" height="96"/>
     </resources>
 </document>
