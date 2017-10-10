@@ -26,6 +26,7 @@ class ListCollectionViewController: UICollectionViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         //loading activity
+        loading.center = view.center
         loading.startAnimating()
         self.view.addSubview(loading)
         
