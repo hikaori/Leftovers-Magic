@@ -1,7 +1,7 @@
 [![Platform](https://img.shields.io/badge/platform-ios-blue.svg)](https://www.android.com/)
 [![Language](https://img.shields.io/badge/language-swift-brightgreen.svg)](https://www.oracle.com/java/index.html)
-# Leftover Magic
-This open source project for an ios App, Leftover Magic *finding Recipes.<br>
+# Leftovers Magic
+This open source project for an ios App, Leftovers Magic *finding Recipes.<br>
 The App show user recipes which related by mutable ingredinet from user input. 
 
 🍆 What can make with remaining stuff in refrigerator? Check that out with this app! 🎃
