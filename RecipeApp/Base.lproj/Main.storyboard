@@ -171,8 +171,15 @@
                             <outlet property="delegate" destination="nwL-0f-3dh" id="1Kx-As-cuh"/>
                         </connections>
                     </collectionView>
+                    <connections>
+                        <outlet property="loading" destination="mCN-SC-sqv" id="pUj-d5-D2K"/>
+                    </connections>
                 </collectionViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="jjC-Tf-kHq" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="gray" id="mCN-SC-sqv">
+                    <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                </activityIndicatorView>
             </objects>
             <point key="canvasLocation" x="1628" y="-608.54572713643188"/>
         </scene>
