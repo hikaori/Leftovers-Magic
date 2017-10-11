@@ -15,7 +15,6 @@ class ListCollectionViewController: UICollectionViewController {
     @IBOutlet var loading: UIActivityIndicatorView!
     var recipes: [Recipe] = []
     var searchWord = String()
-//    var selectedRecipe = Recipe(WithImageURL: "", title: "", recipeURL: "", ingredientLines: [])
 
     
     convenience init(recipies:[Recipe]) {
@@ -25,26 +24,25 @@ class ListCollectionViewController: UICollectionViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         //loading activity
         loading.center = view.center
         loading.startAnimating()
         self.view.addSubview(loading)
         
-//        print("text\(searchWord)")
         SetData.getData(searchword: searchWord) { (recData) in
             self.recipes = recData
 
             self.collectionView?.reloadData() // this method need to refresh data
-            print("number\(self.recipes.count)")
+            //print("number\(self.recipes.count)")
             
-            // after get recipes loading hid
+            // after get recipes loading hide
             self.loading.isHidden = true
         }
     }
     
     // set the number of list
     override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        print("recipies.count\(recipes.count)")
         return recipes.count
     }
     
@@ -60,7 +58,6 @@ class ListCollectionViewController: UICollectionViewController {
         Alamofire.request(recipePicURL).responseImage { response in
             
             if let image = response.result.value {
-                print("image downloaded: \(image)")
                 cell.listImage.image = image
             }
         }
