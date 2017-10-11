@@ -31,7 +31,7 @@ class WebSiteViewController: UIViewController ,WKUIDelegate, WKNavigationDelegat
     }
         // run this method after load the site
     func webView(_ webView: WKWebView, didFinish navigation: WKNavigation!) {
-        let title = webView.title
+//        let title = webView.title
     }
     
     override func didReceiveMemoryWarning() {

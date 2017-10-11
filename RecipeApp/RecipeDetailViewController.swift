@@ -26,7 +26,6 @@ class RecipeDetailViewController: UIViewController , UITableViewDataSource, UITa
         Alamofire.request(self.recipe.imageURL).responseImage { response in
             
             if let image = response.result.value {
-                print("image downloaded: \(image)")
                 self.recipeDetailPic.image = image
             }
         }
@@ -51,7 +50,6 @@ class RecipeDetailViewController: UIViewController , UITableViewDataSource, UITa
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "ingredient")!
                 let text = recipe.ingredientLines[indexPath.row]
-                print("text\(text)")
                 let setText = String(describing: text)
                 cell.textLabel?.text = setText
                 return cell
@@ -61,7 +59,6 @@ class RecipeDetailViewController: UIViewController , UITableViewDataSource, UITa
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "toWebSiteSegue" {
             let destViewController = segue.destination as! WebSiteViewController
-//            let url = "https://www.google.com"
             let url = recipe.webURL
             destViewController.webURL = url
         }
